@@ -70,13 +70,13 @@ mineral_gl = {
     "Al": {"C1": 0, "F1": 0.999, "k": 57.9, "G": 32.3, "dk/dP": 3.91, "dk/dT": -0.008, "dG/dP": 1.3, "dG/dT": -0.0051,
            "alfa": 11.4, "ro": 2.552, "dLr/dP": -0.74, "dLr/dT": 0.0065, "siO2": 67.4715,
            "tiO2": 0.005, "al2O3": 20.0426, "fe2O3": 0.2358, "feO": 0, "mnO": 0.045, "mgO": 0.17,
-           "caO": 0.46678, "na2O": 11.0723, "k2O": 0.4298, "h2O": 0.3712}
-    ,
+           "caO": 0.46678, "na2O": 11.0723, "k2O": 0.4298, "h2O": 0.3712},
 
     "Ort": {"C1": 0, "F1": 0.999, "k": 59.8, "G": 30.1, "dk/dP": 4.22, "dk/dT": -0.0075, "dG/dP": 2.3, "dG/dT": -0.0045,
-            "alfa": 8.22, "ro": 2.546, "dLr/dP": -0.49, "dLr/dT": 0.0054, "siO2": 0,
-            "tiO2": 0, "al2O3": 0, "fe2O3": 0, "feO": 0, "mnO": 0, "mgO": 0,
-            "caO": 0, "na2O": 0, "k2O": 0, "h2O": 0},
+            "alfa": 8.22, "ro": 2.546, "dLr/dP": -0.49, "dLr/dT": 0.0054, "siO2": 64.1052,
+            "tiO2": 0.0108, "al2O3": 19.3359, "fe2O3": 0.2426, "feO": 0.0875, "mnO": 0.0033, "mgO": 0.072,
+            "caO": 0.5278, "na2O": 3.0103, "k2O": 12.2991, "h2O": 0.3331},
+    #granat
 }
 
 global count_matrix
@@ -87,6 +87,8 @@ count_matrix = {"realisations_count": 2,
 def get_data(data):
     count_matrix["realisations_count"] = int(data[1])
     count_matrix["matrix_mineral"] = data[0]
+
+
 
 
 count = count_matrix["realisations_count"]
@@ -389,85 +391,36 @@ def calculations_velocities(pressure, temperature, velocity, h, x, y):
         select_right_realisations(solutions_vector)
 
     def sio_two_concentration(correct_realisations, oxyd):
+
+        # print(correct_realisations)
         w = 0
         m = 0
         ro_min = 0
         c_min = 0
         sio2_rock = 0
-        wi = []
+        oxyd_sum = 0
+        mineral_keys = list(mineral)
         m_sum = 0
-        m_sum_rock = []
-        m_rock = []
-        correct_realisations_length = len(correct_realisations)
-        # print(correct_realisations_length)
-        for i in range(0, correct_realisations_length):
-            mineral_keys = list(mineral)
-            m_sum = 0
-            for l in range(0, len(mineral_keys)):
-                ro_min = mineral[mineral_keys[l]]["ro"]
-                c_min = mineral[mineral_keys[l]]["C1"]
-                m = ro_min * c_min
-                m_rock.append(m)
-                m_sum += m
-            m_sum_rock.append(m_sum)
-        for i in range(0, correct_realisations_length):
-            for j in range(0, len(m_rock)):
-                w = m_rock[j] / m_sum_rock[i]
-                wi.append(w)
-                # print(h,w)
-        min_element = list(mineral)
-        for i in range(0, correct_realisations_length):
-            sio2_rock = 0
-            for k in range(0, len(min_element)):
-                m1 = min_element[k]
-                m2 = mineral[m1]
-                # m3 = m2["siO2"]
-                m3 = m2[oxyd]
-                sio2_rock += wi[i + k] * m3
-                # print(wi[i + k], m1, m3 )
-            correct_realisations[i].update({oxyd: sio2_rock})
-            # print("NE",sio2_rock, correct_realisations)
-            # print("C", correct_realisations[i]['h'], correct_realisations[i]['efVp'], correct_realisations[i]['ro'], correct_realisations[i]['mineral']['Q']['C1'], correct_realisations[i]['mineral']['An']['C1'], correct_realisations[i]['mineral']['Bi']['C1'], correct_realisations[i]['mineral']['CPx']['C1'], correct_realisations[i]['mineral']['Ol']['C1'], correct_realisations[i]['mineral']['OPx']['C1'], correct_realisations[i]['mineral']['Amf']['C1'], correct_realisations[i]['mineral']['Al']['C1'])
-            # all_realizations_file.write(
-            #     "C" + " " + str(correct_realisations[i]['h']) + " " + str(correct_realisations[i]['efVp']) + " " + str(
-            #         correct_realisations[i]['efVs']) + " " + str(correct_realisations[i]['ro']) + " " + str(
-            #         correct_realisations[i]['mineral']['Q']['C1']) + " " + str(
-            #         correct_realisations[i]['mineral']['An']['C1']) + " " + str(
-            #         correct_realisations[i]['mineral']['Bi']['C1']) + " " + str(
-            #         correct_realisations[i]['mineral']['CPx']['C1']) + " " + str(
-            #         correct_realisations[i]['mineral']['Ol']['C1']) + " " + str(
-            #         correct_realisations[i]['mineral']['OPx']['C1']) + " " + str(
-            #         correct_realisations[i]['mineral']['Amf']['C1']) + " " + str(
-            #         correct_realisations[i]['mineral']['Al']['C1']) + '\n')
-            # +" "+str(correct_realisations[i]['ro'])+" "+str(correct_realisations[i]['mineral']['Q']['C1'])+" "+str(correct_realisations[i]['mineral']['An']['C1'])+" "+str(correct_realisations[i]['mineral']['Bi']['C1'])+" "+str(correct_realisations[i]['mineral']['CPx']['C1'])+" "+str(correct_realisations[i]['mineral']['Ol']['C1'])+" "+str(correct_realisations[i]['mineral']['OPx']['C1'])+" "+str(correct_realisations[i]['mineral']['Amf']['C1'])+" "+str(correct_realisations[i]['mineral']['Al']['C1'])+'\n')
-            # print(correct_realisations[i]['h'], sio2_rock)
-            file = open(str(oxyd + ".csv"), 'a')
-            file.write(str(correct_realisations[i]['h'])+' '+str(sio2_rock)+"\n")
+        for l in range(0, len(mineral_keys)): # по хім композіціі
+            # ro_min = mineral[mineral_keys[l]]["ro"]
 
-            # file.write(str(h) + ' ' + str(x) + ' ' + str(y) + ' ' + str(efVp) + ' ' + str(sio2_rock)+'\n')
-            file.close()
+            oxyd_conc = mineral[mineral_keys[l]][oxyd]
+            c_min = mineral[mineral_keys[l]]["C1"]
+            m = oxyd_conc * c_min
+            # print(oxyd_conc, c_min, m, oxyd_sum)
+            # m_rock.append(m)
+            # print(oxyd_conc, c_min)
+            oxyd_sum += m
+            file = open("right14Conc.csv", 'a')
+            file.write( str(c_min) + ' ')
+            #имена миенралов, оксидов, скорости, плостности, x, y, h
+        file.write('\n')
+        file.close()
+        print(h, oxyd_sum)
+            # file = open(str(oxyd + ".csv"), 'a')
+            # file.write(str(correct_realisations['h'])+ ' '+str(correct_realisations['mineral'])+' '+str(sio2_rock)+"\n")
+            # file.close()
 
-            correct_realisations_sio2.insert(k, correct_realisations)
-            print(h, sio2_rock)
-            # for i in range(0, len(correct_realisations_sio2)):
-            efVp = correct_realisations[0]['efVp']
-            efVs = correct_realisations[0]['efVs']
-            ro = correct_realisations[0]['ro']
-            mineral1 = correct_realisations[0]['mineral']
-            Q = str(mineral1['Q']['C1'])
-            Bi = str(mineral1['Bi']['C1'])
-            An = str(mineral1['An']['C1'])
-            Cpx = str(mineral1['CPx']['C1'])
-            Ol = str(mineral1['Ol']['C1'])
-            Amf = str(mineral1['Amf']['C1'])
-            Opx = str(mineral1['OPx']['C1'])
-            Al = str(mineral1['Al']['C1'])
-            file = open("8ExportHXYEfVp.csv", 'a')
-            file.write(str(h) + ' ' + str(x) + ' ' + str(y) + ' ' + str(efVp) + '\n')
-            file.close()
-            file = open("8ExportMineralComp.csv", 'a')
-            file.write(str(h) + ' ' + str(x) + ' ' + str(y) + ' ' + Q + ' ' + Bi + ' ' + An + ' ' + Cpx + ' ' + Ol + ' ' + Amf + ' ' + Opx + ' ' + Al + '\n')
-            file.close()
 
     # Создаем вектор реализаций
     # correct_realisations = []
@@ -478,16 +431,28 @@ def calculations_velocities(pressure, temperature, velocity, h, x, y):
         correct_realisations = []
 
         vector_length = len(vector_of_realisations)
+        # print(vector_of_realisations)
         for i in range(0, vector_length):
             solutions_vector_value = math.fabs(vector_of_realisations[i]["efVp"])
             value = (round(solutions_vector_value, 2) - velocity_etalon) / velocity_etalon
             value_round = round(value, 2)
             if math.fabs(value_round) <= 0.03:
                 correct_realisations.append(vector_of_realisations[i])
+                file = open("rightConc.csv", 'a')
+                # file.write(str(velocity_etalon) + ' ' + str(vector_of_realisations[i]['C1']) + '\n')
+                file.close()
+                sio_two_concentration(correct_realisations[i], "siO2")
+                # print(vector_of_realisations[i])
             else:
                 m = "graite sche"
-        sio_two_concentration(correct_realisations, "siO2")
-        sio_two_concentration(correct_realisations, "siO2")
+
+        # sio_two_concentration(correct_realisations, "na2O")
+        # sio_two_concentration(correct_realisations, "tiO2")
+        # sio_two_concentration(correct_realisations, "fe2O3")
+        # sio_two_concentration(correct_realisations, "al2O3")
+        # sio_two_concentration(correct_realisations, "feO")
+        # sio_two_concentration(correct_realisations, "mnO")
+        # sio_two_concentration(correct_realisations, "mgO")
 
 
 

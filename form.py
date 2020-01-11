@@ -24,6 +24,7 @@ def create_form():
         count_iter = count.get()
         matr_and_count.append(matrix_el)
         matr_and_count.append(count_iter)
+        # matr_and_count.append(8)
         get_data(matr_and_count)
 
     def draw_plot():
@@ -70,6 +71,10 @@ def create_form():
     count_of_iterations = Entry(textvariable=count)
     count_of_iterations.place(relx=.3, rely=.1, anchor="c")
     count_of_iterations.insert(0, "100")
+
+    # profile_number = Entry(textvariable=count)
+    # profile_number.place(relx=.3, rely=.4, anchor="c")
+    # profile_number.insert(8, "8")
 
 
     OPTIONS = [
