@@ -11,6 +11,13 @@ def get_data_from_file(data):
 
 
 def calculate_profile_depth_data():
+    file = open("71918rightConc.csv", 'a')
+    file.write("Q" + ' ' + "An" + ' ' + 'Bi' + ' ' + 'CPx' + ' ' + 'Ol' + ' ' + 'Amf' + ' ' + 'OPx' + ' '
+               + 'Al' + ' ' + 'Ort' + ' ' + ' ' + 'h' + ' ' + 'x' + ' ' + 'y' + ' '
+               + 'Vpinput' + ' ' + 'Vpoutput' + ' ' + 'Vs' + ' ' + 'Ro' + ' '
+               + 'Sio2' + ' ' + "tiO2"  + ' ' + "al2O3" + ' ' + "fe2O3"  + ' ' + "feO"  + ' ' + "mnO" + ' ' + "mgO"  + ' '
+               + "caO"  + ' ' + "na2O"  + ' ' + "k2O" + ' ' + "h2O" + '\n')
+    file.close()
     pressure_temperature = {
         0: [0.0001, 12, 5.8],
         1: [0.0259, 19.83, 5.8],
