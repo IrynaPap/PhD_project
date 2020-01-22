@@ -1,6 +1,5 @@
 from calculation_for_profile_depth import calculate_profile_depth_data
 from calculations_for_dif_depth import calculate_on_the_depth
-from calculation_for_profile_depth import send_profile_data
 
 
 

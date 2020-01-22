@@ -11,12 +11,11 @@ def get_data_from_file(data):
 
 
 def calculate_profile_depth_data():
-    file = open("71918rightConc.csv", 'a')
-    file.write("Q" + ' ' + "An" + ' ' + 'Bi' + ' ' + 'CPx' + ' ' + 'Ol' + ' ' + 'Amf' + ' ' + 'OPx' + ' '
-               + 'Al' + ' ' + 'Ort' + ' ' + ' ' + 'h' + ' ' + 'x' + ' ' + 'y' + ' '
-               + 'Vpinput' + ' ' + 'Vpoutput' + ' ' + 'Vs' + ' ' + 'Ro' + ' '
-               + 'Sio2' + ' ' + "tiO2"  + ' ' + "al2O3" + ' ' + "fe2O3"  + ' ' + "feO"  + ' ' + "mnO" + ' ' + "mgO"  + ' '
-               + "caO"  + ' ' + "na2O"  + ' ' + "k2O" + ' ' + "h2O" + '\n')
+    file = open("rightConc.csv", 'a')
+    file.write('h' + ' ' + 'x' + ' ' + 'y' + ' ' + 'Vpinput' + ' ' + 'Vpoutput' + ' ' + 'Vs' + ' ' + 'Ro' + ' ' + "Q"
+               + ' ' + "An" + ' ' + 'Bi' + ' ' + 'CPx' + ' ' + 'Ol' + ' ' + 'Amf' + ' ' + 'OPx' + ' ' + 'Al' + ' '
+               + 'Ort' + ' ' + 'Gr'+''+'Sio2' + ' ' + "tiO2" + ' ' + "al2O3" + ' ' + "fe2O3" + ' ' + "feO" + ' '
+               + "mnO" + ' ' + "mgO" + ' ' + "caO" + ' ' + "na2O" + ' ' + "k2O" + ' ' + "h2O" + '\n')
     file.close()
     pressure_temperature = {
         0: [0.0001, 12, 5.8],
@@ -40,8 +39,6 @@ def calculate_profile_depth_data():
         25: [0.6659, 408, 6.6],
         30: [0.809, 432, 6.8]
     }
-    # file = open("testfileProfileNEWWWWWWWWW.csv", 'a')
-    #file.write('efVp, efVs, ro' + '\n')
 
     correct_real = {}
     if len(profile_data) > 0:
@@ -52,15 +49,6 @@ def calculate_profile_depth_data():
             velocity = float(point[4])
             x = float(point[0])
             y = float(point[1])
-            correct_realisations_sio2 = calculations_velocities(pressure, temperature, velocity, h, x, y)
-            if len(correct_realisations_sio2) != 0:
-                correct_real.update({h: correct_realisations_sio2})
-            # print(h)
-            #file.write(str(h) + ' ' + str(correct_realisations_sio2) + '\n')
-        return correct_real
+            calculations_velocities(pressure, temperature, velocity, h, x, y)
     else:
         messagebox.showwarning("Warning", "Download profile data")
-
-
-def send_profile_data():
-    return profile_data
