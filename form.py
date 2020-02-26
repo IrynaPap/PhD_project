@@ -70,7 +70,7 @@ def create_form():
 
     count_of_iterations = Entry(textvariable=count)
     count_of_iterations.place(relx=.3, rely=.1, anchor="c")
-    count_of_iterations.insert(0, "100")
+    count_of_iterations.insert(0, "1")
 
     # profile_number = Entry(textvariable=count)
     # profile_number.place(relx=.3, rely=.4, anchor="c")

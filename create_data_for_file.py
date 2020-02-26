@@ -5,7 +5,7 @@ from calculations_for_dif_depth import calculate_on_the_depth
 
 def get_calculated_profile_data():
     data = calculate_profile_depth_data()
-    data1 = str(send_profile_data())
+    # data1 = str(send_profile_data())
     file = open("testfileProfile.csv", "w")
     file.write('efVp, efVs, ro' + '\n')
     for d in data:
