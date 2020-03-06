@@ -9,54 +9,54 @@ fn = 0
 # fileAll = open('allRealizations.csv', 'a')
 
 mineral_gl = {
-    "Q": {"C1": 0.5, "F1": 0.999, "k": 39.5, "G": 48.8, "dk/dP": 4.3, "dk/dT": -0.003, "dG/dP": -0.45, "dG/dT": -0.008,
+    "Q": {"C1": 0, "F1": 0.999, "k": 39.5, "G": 48.8, "dk/dP": 4.3, "dk/dT": -0.003, "dG/dP": -0.45, "dG/dT": -0.008,
           "alfa": 5, "ro": 2.646, "dLr/dP": -0.8, "dLr/dT": 0.007, "siO2": 100,
           "tiO2": 0, "al2O3": 0, "fe2O3": 0, "feO": 0, "mnO": 0, "mgO": 0,
           "caO": 0, "na2O": 0, "k2O": 0, "h2O": 0},
 
-    "An": {"C1": 0.5, "F1": 0.999, "k": 88.6, "G": 41, "dk/dP": 4.3, "dk/dT": -0.015, "dG/dP": 3.9, "dG/dT": -0.0056,
+    "An": {"C1": 0, "F1": 0.999, "k": 88.6, "G": 41, "dk/dP": 4.3, "dk/dT": -0.015, "dG/dP": 3.9, "dG/dT": -0.0056,
            "alfa": 8.6, "ro": 2.77, "dLr/dP": -0.57, "dLr/dT": 0.008, "siO2": 44.2714,
            "tiO2": 0.025, "al2O3": 35.4186, "fe2O3": 0.4283, "feO": 0.02666, "mnO": 0, "mgO": 0.115,
-           "caO": 18.6629, "na2O": 0.5942, "k2O": 0.12, "h2O": 0.4971}
-    #
-    # "Bi": {"C1": 0, "F1": 0.999, "k": 58.5, "G": 24.1, "dk/dP": 5.43, "dk/dT": -0.003, "dG/dP": 3.82, "dG/dT": -0.0016,
-    #        "alfa": 9.59, "ro": 2.905, "dLr/dP": -0.56, "dLr/dT": 0.0048, "siO2": 36.2038,
-    #        "tiO2": 2.7652, "al2O3": 16.0504, "fe2O3": 4.4599, "feO": 16.0518, "mnO": 0.2626, "mgO": 10.3228,
-    #        "caO": 1.0633, "na2O": 0.4175, "k2O": 8.2127, "h2O": 2.077},
-    #
-    # "CPx": {"C1": 0, "F1": 0.999, "k": 112.9, "G": 67.1, "dk/dP": 4, "dk/dT": -0.003, "dG/dP": 2, "dG/dT": -0.0019,
-    #         "alfa": 9.7, "ro": 3.28, "dLr/dP": -0.7, "dLr/dT": 0.0008, "siO2": 50.63,
-    #         "tiO2": 0.4, "al2O3": 2.08, "fe2O3": 2.25, "feO": 9.19, "mnO": 0.34, "mgO": 12.16,
-    #         "caO": 21.11, "na2O": 0.64, "k2O": 0.08, "h2O": 0.12},
-    #
-    # "Ol": {"C1": 0, "F1": 0.999, "k": 131.23, "G": 76.49, "dk/dP": 5.38, "dk/dT": -0.018, "dG/dP": 1.76,
-    #        "dG/dT": -0.0135, "alfa": 9.65, "ro": 3.27, "dLr/dP": -1.416, "dLr/dT": 0.0035, "siO2": 39.4029,
-    #        "tiO2": 0.0645, "al2O3": 0.3043, "fe2O3": 1.0111, "feO": 15.0999, "mnO": 0.4703, "mgO": 43.7496,
-    #        "caO": 0.3795, "na2O": 0.10511, "k2O": 0.0438, "h2O": 0.182},
-    #
-    # "Amf": {"C1": 0.1, "F1": 0.999, "k": 92.4, "G": 50.4, "dk/dP": 2.41, "dk/dT": -0.0063, "dG/dP": 3.7, "dG/dT": -0.0111,
-    #         "alfa": 11.2, "ro": 3.041, "dLr/dP": -0.56, "dLr/dT": 0.0033, "siO2": 45.531,
-    #         "tiO2": 1.1909, "al2O3": 10.3716, "fe2O3": 4.0457, "feO": 11.6334, "mnO": 0.2867, "mgO": 9.461,
-    #         "caO": 10.6416, "na2O": 1.534, "k2O": 0.6645, "h2O": 2.8617},
-    #
-    # "OPx": {"C1": 0, "F1": 0.999, "k": 107.5, "G": 72.6, "dk/dP": 9.61, "dk/dT": -0.037, "dG/dP": 2.18,
-    #         "dG/dT": -0.0166, "alfa": 15.7, "ro": 3.584, "dLr/dP": -3.023, "dLr/dT": 0.0024, "siO2": 48.9935,
-    #         "tiO2": 0.2421, "al2O3": 1.5561, "fe2O3": 3.2499, "feO": 29.2095, "mnO": 0.5038, "mgO": 15.4605,
-    #         "caO": 0.9638, "na2O": 0.1812, "k2O": 0.1219, "h2O": 0.31},
-    #
-    # "Alb": {"C1": 0, "F1": 0.999, "k": 57.9, "G": 32.3, "dk/dP": 3.91, "dk/dT": -0.008, "dG/dP": 1.3, "dG/dT": -0.0051,
-    #        "alfa": 11.4, "ro": 2.552, "dLr/dP": -0.74, "dLr/dT": 0.0065, "siO2": 67.4715,
-    #        "tiO2": 0.005, "al2O3": 20.0426, "fe2O3": 0.2358, "feO": 0, "mnO": 0.045, "mgO": 0.17,
-    #        "caO": 0.46678, "na2O": 11.0723, "k2O": 0.4298, "h2O": 0.3712},
-    #
-    # "Ort": {"C1": 0, "F1": 0.999, "k": 59.8, "G": 30.1, "dk/dP": 4.22, "dk/dT": -0.0075, "dG/dP": 2.3, "dG/dT": -0.0045,
-    #         "alfa": 8.22, "ro": 2.546, "dLr/dP": -0.49, "dLr/dT": 0.0054, "siO2": 64.1052,
-    #         "tiO2": 0.0108, "al2O3": 19.3359, "fe2O3": 0.2426, "feO": 0.0875, "mnO": 0.0033, "mgO": 0.072,
-    #         "caO": 0.5278, "na2O": 3.0103, "k2O": 122.2991, "h2O": 0.3331}
-    # # "Gr": {"C1": 0.1, "F1": 0.999, "k": 176.2, "G": 98.4, "dk/dP": 5.53, "dk/dT": -0.0196, "dG/dP": 1.98, "dG/dT": -0.0152,
-    # #        "alfa": 8.98, "ro": 4.116, "dLr/dP": -0.7, "dLr/dT": 0.0025, "siO2": 38.1787,
-    # #        "tiO2": 0.3046, "al2O3": 18.7381, "fe2O3": 4.0724, "feO": 23.7942, "mnO": 2.0696, "mgO": 3.4508,
-    # #        "caO": 9.5036, "na2O": 0.189, "k2O": 0.117, "h2O": 0.224}
+           "caO": 18.6629, "na2O": 0.5942, "k2O": 0.12, "h2O": 0.4971},
+
+    "Bi": {"C1": 0, "F1": 0.999, "k": 58.5, "G": 24.1, "dk/dP": 5.43, "dk/dT": -0.003, "dG/dP": 3.82, "dG/dT": -0.0016,
+           "alfa": 9.59, "ro": 2.905, "dLr/dP": -0.56, "dLr/dT": 0.0048, "siO2": 36.2038,
+           "tiO2": 2.7652, "al2O3": 16.0504, "fe2O3": 4.4599, "feO": 16.0518, "mnO": 0.2626, "mgO": 10.3228,
+           "caO": 1.0633, "na2O": 0.4175, "k2O": 8.2127, "h2O": 2.077},
+
+    "CPx": {"C1": 0, "F1": 0.999, "k": 112.9, "G": 67.1, "dk/dP": 4, "dk/dT": -0.003, "dG/dP": 2, "dG/dT": -0.0019,
+            "alfa": 9.7, "ro": 3.28, "dLr/dP": -0.7, "dLr/dT": 0.0008, "siO2": 50.63,
+            "tiO2": 0.4, "al2O3": 2.08, "fe2O3": 2.25, "feO": 9.19, "mnO": 0.34, "mgO": 12.16,
+            "caO": 21.11, "na2O": 0.64, "k2O": 0.08, "h2O": 0.12},
+
+    "Ol": {"C1": 0, "F1": 0.999, "k": 131.23, "G": 76.49, "dk/dP": 5.38, "dk/dT": -0.018, "dG/dP": 1.76,
+           "dG/dT": -0.0135, "alfa": 9.65, "ro": 3.27, "dLr/dP": -1.416, "dLr/dT": 0.0035, "siO2": 39.4029,
+           "tiO2": 0.0645, "al2O3": 0.3043, "fe2O3": 1.0111, "feO": 15.0999, "mnO": 0.4703, "mgO": 43.7496,
+           "caO": 0.3795, "na2O": 0.10511, "k2O": 0.0438, "h2O": 0.182},
+
+    "Amf": {"C1": 0, "F1": 0.999, "k": 92.4, "G": 50.4, "dk/dP": 2.41, "dk/dT": -0.0063, "dG/dP": 3.7, "dG/dT": -0.0111,
+            "alfa": 11.2, "ro": 3.041, "dLr/dP": -0.56, "dLr/dT": 0.0033, "siO2": 45.531,
+            "tiO2": 1.1909, "al2O3": 10.3716, "fe2O3": 4.0457, "feO": 11.6334, "mnO": 0.2867, "mgO": 9.461,
+            "caO": 10.6416, "na2O": 1.534, "k2O": 0.6645, "h2O": 2.8617},
+
+    "OPx": {"C1": 0, "F1": 0.999, "k": 107.5, "G": 72.6, "dk/dP": 9.61, "dk/dT": -0.037, "dG/dP": 2.18,
+            "dG/dT": -0.0166, "alfa": 15.7, "ro": 3.584, "dLr/dP": -3.023, "dLr/dT": 0.0024, "siO2": 48.9935,
+            "tiO2": 0.2421, "al2O3": 1.5561, "fe2O3": 3.2499, "feO": 29.2095, "mnO": 0.5038, "mgO": 15.4605,
+            "caO": 0.9638, "na2O": 0.1812, "k2O": 0.1219, "h2O": 0.31},
+
+    "Alb": {"C1": 1, "F1": 0.999, "k": 57.9, "G": 32.3, "dk/dP": 3.91, "dk/dT": -0.008, "dG/dP": 1.3, "dG/dT": -0.0051,
+           "alfa": 11.4, "ro": 2.552, "dLr/dP": -0.74, "dLr/dT": 0.0065, "siO2": 67.4715,
+           "tiO2": 0.005, "al2O3": 20.0426, "fe2O3": 0.2358, "feO": 0, "mnO": 0.045, "mgO": 0.17,
+           "caO": 0.46678, "na2O": 11.0723, "k2O": 0.4298, "h2O": 0.3712},
+
+    "Ort": {"C1": 0, "F1": 0.999, "k": 59.8, "G": 30.1, "dk/dP": 4.22, "dk/dT": -0.0075, "dG/dP": 2.3, "dG/dT": -0.0045,
+            "alfa": 8.22, "ro": 2.546, "dLr/dP": -0.49, "dLr/dT": 0.0054, "siO2": 64.1052,
+            "tiO2": 0.0108, "al2O3": 19.3359, "fe2O3": 0.2426, "feO": 0.0875, "mnO": 0.0033, "mgO": 0.072,
+            "caO": 0.5278, "na2O": 3.0103, "k2O": 122.2991, "h2O": 0.3331},
+    "Gr": {"C1": 0, "F1": 0.999, "k": 176.2, "G": 98.4, "dk/dP": 5.53, "dk/dT": -0.0196, "dG/dP": 1.98, "dG/dT": -0.0152,
+           "alfa": 8.98, "ro": 4.116, "dLr/dP": -0.7, "dLr/dT": 0.0025, "siO2": 38.1787,
+           "tiO2": 0.3046, "al2O3": 18.7381, "fe2O3": 4.0724, "feO": 23.7942, "mnO": 2.0696, "mgO": 3.4508,
+           "caO": 9.5036, "na2O": 0.189, "k2O": 0.117, "h2O": 0.224}
 }
 oxygens = ['siO2', 'tiO2', 'al2O3', 'fe2O3', 'feO', 'mnO', 'mgO', 'caO', 'na2O', 'k2O', 'h2O']
 
@@ -246,19 +246,23 @@ def calculations_velocities(pressure, temperature, velocity, h, x, y):
             vz[mi] = vg[mi] / vc[mi]
             wz[mi] = wg[mi] / wc[mi]
             mz[mi] = 1 / 15 * (tz[mi] + 2 * nz[mi] - 2 * lz[mi] - 2 * lzt[mi] + 6 * vz[mi] + 6 * wz[mi])
-            kz[mi] = 1 / 3 * (2 * (tz[mi] + lz[mi] + lzt[mi]) + nz[mi])
+            kz[mi] = 1 / 3 * (2 * (tz[mi] + lz[mi] + lzt[mi]) + nz[mi]) #posmotret
             mhm0 = 0
             khm0 = 0
+        km = k1[count_matrix["matrix_mineral"]]
+        mm = m1[count_matrix["matrix_mineral"]]
 #убрать из цикла матричный минерал / все кроме матрично
         for mi2 in mineral:
-            km = k1[count_matrix["matrix_mineral"]]
-            mm = m1[count_matrix["matrix_mineral"]]
-            md[mi2] = m1[mi] - mm
-            kd[mi2] = k1[mi] - km
-            mhm0 = mhm0 + min_mi["C1"] * md[mi2] * mz[mi2]
-            khm0 = khm0 + min_mi["C1"] * kd[mi2] * kz[mi2]
-        mhm = 1 / (1 + mhm0)
-        khm = 1 / (1 + khm0)
+            if mi2 != count_matrix["matrix_mineral"]:
+                md[mi2] = m1[mi2] - mm
+                kd[mi2] = k1[mi2] - km
+                # zdes problema
+                # mhm0 = mhm0 + min_mi["C1"] * md[mi2] * mz[mi2]
+                mhm0 = mhm0 + mineral[mi2]["C1"] * md[mi2] * mz[mi2]
+                # khm0 = khm0 + min_mi["C1"] * kd[mi2] * kz[mi2]
+                khm0 = khm0 + mineral[mi2]["C1"] * kd[mi2] * kz[mi2]
+                mhm = 1 / (1 + mhm0)
+                khm = 1 / (1 + khm0)
         for mi1 in mineral:
             if mi1 != count_matrix["matrix_mineral"]:
                 mh[mi1] = mhm * (1 + md[mi1] * mz[mi1])
@@ -283,7 +287,7 @@ def calculations_velocities(pressure, temperature, velocity, h, x, y):
     # Rock = single_realisation
     # TO DO
     def calc_effective_linear(kz, khm, km, k1, kh, single_realisation):
-        alfa_r = []
+        alfa_r = {}
         alfa_rm = 0
         ss_beta = 0
         ef_beta = 0
@@ -292,31 +296,36 @@ def calculations_velocities(pressure, temperature, velocity, h, x, y):
         mineral_keys = list(mineral)
         cm = calculate_cm_matrix()
     #что то тут не так
-        for mi in mineral:
-            min_mi = mineral[mi]
-        if mi != count_matrix["matrix_mineral"]:
-            ii = ii + 1
-            r_beta = r_beta + mineral[mi]["C1"] * kz[mineral_keys[ii]] * min_mi["Elast6"] * 1E-9
+        for mi4 in mineral:
+            min_mi = mineral[mi4]
+            if mi4 != count_matrix["matrix_mineral"]:
+                # ii = ii + 1
+                # r_beta = r_beta + mineral[mi4]["C1"] * kz[mineral_keys[ii]] * min_mi["Elast6"] * 1E-9
+                r_beta = r_beta + mineral[mi4]["C1"] * kz[mi4] * min_mi["Elast6"] * 1E-9
 
         ii = -1
-        for mi in mineral:
-            min_mi = mineral[mi]
-            if mi != count_matrix["matrix_mineral"]:
+        for mi5 in mineral:
+            min_mi = mineral[mi5]
+            if mi5 != count_matrix["matrix_mineral"]:
                 ii = ii + 1
-                kh1 = kh[mineral_keys[ii]]
-                kz1 = kz[mineral_keys[ii]]
+                # kh1 = kh[mineral_keys[ii]]
+                kh1 = kh[mi5]
+                # kz1 = kz[mineral_keys[ii]]
+                kz1 = kz[mi5]
                 alfa_r_i = kh1 * r_beta - kz1 * min_mi["Elast6"] * 1E-9
-                alfa_r.append(alfa_r_i)
+                alfa_r.update({mi5: alfa_r_i})
             alfa_rm = khm * r_beta
             ss_beta = 0
 
         ii = -1
-        for mi in mineral:
-            min_mi = mineral[mi]
-            if mi != count_matrix["matrix_mineral"]:
+        for mi6 in mineral:
+            min_mi = mineral[mi6]
+            if mi6 != count_matrix["matrix_mineral"]:
                 ii = ii + 1
-                ss_beta = ss_beta + mineral[mi]["C1"] * min_mi["Elast5"] - alfa_r[ii] * k1[mineral_keys[ii]]
-        ef_beta = ss_beta + cm * (mineral[count_matrix["matrix_mineral"]]["Elast5"] - alfa_rm * km)
+                # print(mineral_keys[ii], mi6, count_matrix["matrix_mineral"])
+                # ss_beta = ss_beta + mineral[mi6]["C1"] * min_mi["Elast5"] - alfa_r[ii] * k1[mineral_keys[ii]]
+                ss_beta = ss_beta + mineral[mi6]["C1"] * min_mi["Elast5"] - alfa_r[mi6] * k1[mi6]
+        # ef_beta = ss_beta + cm * (mineral[count_matrix["matrix_mineral"]]["Elast5"] - alfa_rm * km)
         fef_lr = ef_beta / (3 * single_realisation["Elast0"] * 1E+9)
         ef_lr = fef_lr
         # вызываем функцию calc_effective_kg и передаем давление температуру и значение ef_lr
@@ -339,6 +348,7 @@ def calculations_velocities(pressure, temperature, velocity, h, x, y):
         # if ef_k > 0 and ef_g > 0:
         ef_vp = math.sqrt((ef_k + 4 / 3 * ef_g) / ro)
         # ef = ((ef_k + 4 / 3 * ef_g) / ro)
+        ef = ((ef_k + 4 / 3 * ef_g) / ro)
         ef_vs = math.sqrt(ef_g / ro)
         velocities.update({"h": h})
         velocities.update({"efVp": ef_vp})
@@ -348,6 +358,7 @@ def calculations_velocities(pressure, temperature, velocity, h, x, y):
         solutions_vector.append(velocities)
         # fileAll.write(str(solutions_vector) + '\n')
         # m += m непонятно что
+        print(h, ef_vp, ef_vs, ro)
         select_right_realisations(solutions_vector, ef_vp, ef_vs, ro)
         # else:
         #     print()
@@ -371,10 +382,10 @@ def calculations_velocities(pressure, temperature, velocity, h, x, y):
 
     def select_right_realisations(vector_of_realisations, ef_vp, ef_vs, ro):
         velocity_etalon = velocity
-        file = open("rightConc18_Feb.csv", 'a')
-        fileAll = open('allCalc18_Feb.csv', 'a')
+        file = open("rightConc4_March.csv", 'a')
+        fileAll = open('allCalc4_March.csv', 'a')
         vector_length = len(vector_of_realisations)
-        fileMod = open('fileMod18_Feb.csv', 'a')
+        fileMod = open('fileMod4_March.csv', 'a')
         for i in range(0, vector_length):
             fileAll.write(str(h) + ' ' + str(x) + ' ' + str(y) + ' ' + str(pressure) + ' '+ str(temperature)+' ')
             fileMod.write(str(h) + ' ' + str(x) + ' ' + str(y)  + ' ' + str(velocity) + ' ' + str(ef_vp) + ' ' + str(ef_vs) + ' ' + str(ro))
@@ -409,10 +420,10 @@ def calculations_velocities(pressure, temperature, velocity, h, x, y):
 
     def solutions_vector_generation():
         for i in range(0, count_matrix["realisations_count"]):
-            # shuffle_min_component = shuffle_min_components()
-            # rand_component_percent = rand_components_percent(shuffle_min_component)
-            # calculate_mineral_properties = calculate_minerals_properties(rand_component_percent)
-            calculate_mineral_properties = calculate_minerals_properties(mineral)
+            shuffle_min_component = shuffle_min_components()
+            rand_component_percent = rand_components_percent(shuffle_min_component)
+            calculate_mineral_properties = calculate_minerals_properties(rand_component_percent)
+            # calculate_mineral_properties = calculate_minerals_properties(mineral)
             cm = calculate_cm_matrix()
             realisation_with_density = calculate_density(calculate_mineral_properties)
             calculate_current_elast_modules(realisation_with_density, cm)

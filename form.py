@@ -80,7 +80,7 @@ def create_form():
     OPTIONS = [
         "An",
         "Q",
-        "Al",
+        "Alb",
         "Bi",
         "OPx",
         "Amf",
